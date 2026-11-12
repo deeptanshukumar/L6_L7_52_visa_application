@@ -1,0 +1,172 @@
+FFF.F.FFFFFFFFFFFFFFFFFF                                                 [100%]
+=================================== FAILURES ===================================
+  + Exception Group Traceback (most recent call last):
+  |   File "/tmp/lab7-baseline/test_visa_application.py", line 13, in test_parse_application_no_crash
+  |     @example(None)
+  |     
+  |   File "/home/deeptanshukumar/Downloads/L6_L7_52_visa_application/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1730, in _raise_to_user
+  |     raise the_error_hypothesis_found
+  | ExceptionGroup: Hypothesis found 2 distinct failures in explicit examples. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/lab7-baseline/test_visa_application.py", line 16, in test_parse_application_no_crash
+    |     result = parse_application(s)
+    |   File "/tmp/lab7-baseline/visa_application.py", line 2, in parse_application
+    |     visa, entries = text.split(':')
+    |                     ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing explicit example: test_parse_application_no_crash(
+    |     s=None,
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/lab7-baseline/test_visa_application.py", line 17, in test_parse_application_no_crash
+    |     assert result is None or (isinstance(result, tuple) and len(result) == 2 and result[0] and result[1] > 0)
+    | AssertionError: assert (('Tourist', 0) is None or (True and 2 == 2 and 'Tourist' and 0 > 0))
+    |  +  where True = isinstance(('Tourist', 0), tuple)
+    |  +  and   2 = len(('Tourist', 0))
+    | Failing explicit example: test_parse_application_no_crash(
+    |     s='tourist:0',
+    | )
+    +------------------------------------
+/home/deeptanshukumar/Downloads/L6_L7_52_visa_application/.venv/lib/python3.13/site-packages/hypothesis/core.py:1730: ExceptionGroup: Hypothesis found 2 distinct failures in explicit examples. (2 sub-exceptions)
+  + Exception Group Traceback (most recent call last):
+  |   File "/tmp/lab7-baseline/test_visa_application.py", line 20, in test_processing_average_no_crash
+  |     @example(None)
+  |     
+  |   File "/home/deeptanshukumar/Downloads/L6_L7_52_visa_application/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1730, in _raise_to_user
+  |     raise the_error_hypothesis_found
+  | ExceptionGroup: Hypothesis found 2 distinct failures in explicit examples. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/lab7-baseline/test_visa_application.py", line 23, in test_processing_average_no_crash
+    |     result = processing_average(s)
+    |   File "/tmp/lab7-baseline/visa_application.py", line 6, in processing_average
+    |     values = [int(r) for r in days_csv.split(',')]
+    |                               ^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing explicit example: test_processing_average_no_crash(
+    |     s=None,
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/lab7-baseline/test_visa_application.py", line 23, in test_processing_average_no_crash
+    |     result = processing_average(s)
+    |   File "/tmp/lab7-baseline/visa_application.py", line 6, in processing_average
+    |     values = [int(r) for r in days_csv.split(',')]
+    |               ~~~^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | Failing explicit example: test_processing_average_no_crash(
+    |     s='',
+    | )
+    +------------------------------------
+/home/deeptanshukumar/Downloads/L6_L7_52_visa_application/.venv/lib/python3.13/site-packages/hypothesis/core.py:1730: ExceptionGroup: Hypothesis found 2 distinct failures in explicit examples. (2 sub-exceptions)
+  + Exception Group Traceback (most recent call last):
+  |   File "/tmp/lab7-baseline/test_visa_application.py", line 27, in test_payable_fee_no_crash
+  |     @example(None)
+  |     
+  |   File "/home/deeptanshukumar/Downloads/L6_L7_52_visa_application/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1730, in _raise_to_user
+  |     raise the_error_hypothesis_found
+  | ExceptionGroup: Hypothesis found 2 distinct failures in explicit examples. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/lab7-baseline/test_visa_application.py", line 31, in test_payable_fee_no_crash
+    |     result = payable_fee(s)
+    |   File "/tmp/lab7-baseline/visa_application.py", line 10, in payable_fee
+    |     fee, discount = text.split('|')
+    |                     ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing explicit example: test_payable_fee_no_crash(
+    |     s=None,
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/lab7-baseline/test_visa_application.py", line 32, in test_payable_fee_no_crash
+    |     assert result is None or (math.isfinite(result) and result >= 0)
+    | AssertionError: assert (nan is None or (False))
+    |  +  where False = <built-in function isfinite>(nan)
+    |  +    where <built-in function isfinite> = math.isfinite
+    | (note: 1 other explicit example also failed with this error; use Verbosity.verbose to view)
+    | Failing explicit example: test_payable_fee_no_crash(
+    |     s='NaN|0',
+    | )
+    +------------------------------------
+/home/deeptanshukumar/Downloads/L6_L7_52_visa_application/.venv/lib/python3.13/site-packages/hypothesis/core.py:1730: ExceptionGroup: Hypothesis found 2 distinct failures in explicit examples. (2 sub-exceptions)
+E   assert 0 == 0.5 ± 5.0e-07
+      
+      comparison failed
+      Obtained: 0
+      Expected: 0.5 ± 5.0e-07
+    Failing test case: test_average_matches_arithmetic_mean(
+        days=[0, 1],
+    )
+/tmp/lab7-baseline/test_visa_application.py:40: assert 0 == 0.5 ± 5.0e-07
+E   ValueError: not enough values to unpack (expected 2, got 1)
+/tmp/lab7-baseline/visa_application.py:2: ValueError: not enough values to unpack (expected 2, got 1)
+E   AssertionError: assert ('', 2) is None
+     +  where ('', 2) = parse_application(':2')
+/tmp/lab7-baseline/test_visa_application.py:48: AssertionError: assert ('', 2) is None
+E   AssertionError: assert ('Tourist', 0) is None
+     +  where ('Tourist', 0) = parse_application('tourist:0')
+/tmp/lab7-baseline/test_visa_application.py:48: AssertionError: assert ('Tourist', 0) is None
+E   AssertionError: assert ('Tourist', -1) is None
+     +  where ('Tourist', -1) = parse_application('tourist:-1')
+/tmp/lab7-baseline/test_visa_application.py:48: AssertionError: assert ('Tourist', -1) is None
+E   ValueError: too many values to unpack (expected 2)
+/tmp/lab7-baseline/visa_application.py:2: ValueError: too many values to unpack (expected 2)
+E   ValueError: invalid literal for int() with base 10: '1.5'
+/tmp/lab7-baseline/visa_application.py:3: ValueError: invalid literal for int() with base 10: '1.5'
+E   ValueError: invalid literal for int() with base 10: ''
+/tmp/lab7-baseline/visa_application.py:6: ValueError: invalid literal for int() with base 10: ''
+E   ValueError: invalid literal for int() with base 10: ''
+/tmp/lab7-baseline/visa_application.py:6: ValueError: invalid literal for int() with base 10: ''
+E   AssertionError: assert 0 is None
+     +  where 0 = processing_average('-1,2')
+/tmp/lab7-baseline/test_visa_application.py:52: AssertionError: assert 0 is None
+E   ValueError: invalid literal for int() with base 10: 'one'
+/tmp/lab7-baseline/visa_application.py:6: ValueError: invalid literal for int() with base 10: 'one'
+E   ValueError: invalid literal for int() with base 10: '1.5'
+/tmp/lab7-baseline/visa_application.py:6: ValueError: invalid literal for int() with base 10: '1.5'
+E   ValueError: not enough values to unpack (expected 2, got 1)
+/tmp/lab7-baseline/visa_application.py:10: ValueError: not enough values to unpack (expected 2, got 1)
+E   ValueError: too many values to unpack (expected 2)
+/tmp/lab7-baseline/visa_application.py:10: ValueError: too many values to unpack (expected 2)
+E   AssertionError: assert 0 is None
+     +  where 0 = payable_fee('-1|0')
+/tmp/lab7-baseline/test_visa_application.py:56: AssertionError: assert 0 is None
+E   AssertionError: assert 2.1799999999999997 is None
+     +  where 2.1799999999999997 = payable_fee('1|-1')
+/tmp/lab7-baseline/test_visa_application.py:56: AssertionError: assert 2.1799999999999997 is None
+E   AssertionError: assert nan is None
+     +  where nan = payable_fee('NaN|0')
+/tmp/lab7-baseline/test_visa_application.py:56: AssertionError: assert nan is None
+E   AssertionError: assert inf is None
+     +  where inf = payable_fee('inf|0')
+/tmp/lab7-baseline/test_visa_application.py:56: AssertionError: assert inf is None
+E   AssertionError: assert inf is None
+     +  where inf = payable_fee('1.7e308|0')
+/tmp/lab7-baseline/test_visa_application.py:56: AssertionError: assert inf is None
+=========================== short test summary info ============================
+FAILED test_visa_application.py::test_parse_application_no_crash - ExceptionG...
+FAILED test_visa_application.py::test_processing_average_no_crash - Exception...
+FAILED test_visa_application.py::test_payable_fee_no_crash - ExceptionGroup: ...
+FAILED test_visa_application.py::test_average_matches_arithmetic_mean - asser...
+FAILED test_visa_application.py::test_invalid_application[] - ValueError: not...
+FAILED test_visa_application.py::test_invalid_application[:2] - AssertionErro...
+FAILED test_visa_application.py::test_invalid_application[tourist:0] - Assert...
+FAILED test_visa_application.py::test_invalid_application[tourist:-1] - Asser...
+FAILED test_visa_application.py::test_invalid_application[tourist:1:2] - Valu...
+FAILED test_visa_application.py::test_invalid_application[tourist:1.5] - Valu...
+FAILED test_visa_application.py::test_invalid_days[] - ValueError: invalid li...
+FAILED test_visa_application.py::test_invalid_days[1,,2] - ValueError: invali...
+FAILED test_visa_application.py::test_invalid_days[-1,2] - AssertionError: as...
+FAILED test_visa_application.py::test_invalid_days[one,2] - ValueError: inval...
+FAILED test_visa_application.py::test_invalid_days[1.5,2] - ValueError: inval...
+FAILED test_visa_application.py::test_invalid_fee[] - ValueError: not enough ...
+FAILED test_visa_application.py::test_invalid_fee[1|2|3] - ValueError: too ma...
+FAILED test_visa_application.py::test_invalid_fee[-1|0] - AssertionError: ass...
+FAILED test_visa_application.py::test_invalid_fee[1|-1] - AssertionError: ass...
+FAILED test_visa_application.py::test_invalid_fee[NaN|0] - AssertionError: as...
+FAILED test_visa_application.py::test_invalid_fee[inf|0] - AssertionError: as...
+FAILED test_visa_application.py::test_invalid_fee[1.7e308|0] - AssertionError...
+22 failed, 2 passed in 1.05s
